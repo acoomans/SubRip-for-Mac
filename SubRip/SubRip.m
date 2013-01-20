@@ -133,8 +133,10 @@
             }
         }
         else {
-            [subtitleItems addObject:cur];
-            cur = [SubRipItem new];
+			if (cur.text) {
+	            [subtitleItems addObject:cur];
+    	        cur = [SubRipItem new];
+			}
             scanPosition = SubRipScanPositionArrayIndex;
         }
     }];
